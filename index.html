@@ -17,6 +17,13 @@
         text-align: center;
         font-family: monospace;
         font-size: 25px;
+        margin: auto;
+        width: 800px;
+
+        -webkit-user-select: none;
+    	-moz-user-select: -moz-none;
+    	-ms-user-select: none;
+        user-select: none;
       }
 
       h1 {
@@ -27,22 +34,30 @@
       	margin: 0;
       }
 
-      #scoreboard p{
-        display: inline;
-        text-align: left;
+      #gameInfo{
+      	margin: 0;
+      	padding: 0;
+      	text-align: left;
+      }
+
+      #gameInfo p {
+      	display: inline;
+      }
+
+      #multiplier {
+      	float: right;
       }
     </style>
   </head>
 
   <body>
     <h1>WATCH THE THRONE</h1>
-
-    <div id="scoreboard">
+    <div id="gameInfo">
       <p>Score: </p> 
       <p id="score">0</p>
+      <span id="multiplier">Multiplier: 1x</span>
       <br>
-    </div>
-
+     </div>
     <canvas id="gameScreen" width="800" height="600"></canvas>
     <h2>CREDITS:</h2>
     <p id="ilya">Ilya Veksler - Art</p>

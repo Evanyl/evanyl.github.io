@@ -20,7 +20,7 @@ const gameLoop = timestamp => {
 	game.draw(ctx);
 	
 	// Update
-	game.update(deltaTime, game);
+	game.update(deltaTime);
 
 
 	requestAnimationFrame(gameLoop);

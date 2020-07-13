@@ -1,19 +1,22 @@
 import {checkCollision} from "./collisions.js";
 
 const STARTINGPOSITION = {x:300, y:500};
-const STARTINGSPEED = {x: 400, y: -400};
+const STARTINGSPEED = {x: 200, y: -300};
 
 export default class Ball {
 	constructor(game) {
 		this.image = new Image();
 		this.image.src = "../assets/images/ball.png";
-
-		this.position = STARTINGPOSITION;
-		this.speed = STARTINGSPEED;
-		this.baseSpeed = 500;
-		this.maxSpeedFluctuation = 300;
+		this.position = {};
+		this.speed = {};
+		Object.assign(this.position, STARTINGPOSITION);
+		Object.assign(this.speed, STARTINGSPEED);
+		this.baseSpeed = 300;
+		this.maxSpeedFluctuation = 200;
 
 		this.game = game;
+
+		this.ballDelete = false;
 
 		this.size = 15;
 	}
@@ -22,37 +25,26 @@ export default class Ball {
 		ctx.drawImage(this.image, this.position.x, this.position.y, this.size, this.size);
 	}
 
-	notStarted() {
-		this.speed = {x: 0, y:0};
-		this.position.x = this.game.paddle.position.x + (this.game.paddle.width / 2) - this.size / 2;
-		this.position.y = this.game.paddle.position.y - this.size;
+	setStartingSpeed(x) {
+		Object.assign(this.speed, STARTINGSPEED);
+		this.speed.x += x;
 	}
 
-	starting() {
-		if (this.game.notStarted) {
-			this.speed = STARTINGSPEED;
-			this.game.notStarted = false;
-		}	
-	}
 
 	newSpeed() {
 		if (Math.random() < 0.8) {
 			this.changeDirection = Math.sign(this.speed.x);
+			this.speedFluctuation = this.maxSpeedFluctuation;
 		} else {
 			this.changeDirection = -Math.sign(this.speed.x);
-		}
-
-		if (Math.random() < 0.4) {
-			this.speedFluctuation = this.maxSpeedFluctuation * 0.5;
-		} else {
-			this.speedFluctuation = this.maxSpeedFluctuation;
+			this.speedFluctuation = this.maxSpeedFluctuation * 0.3;
 		}
 
 		this.speed.x = this.changeDirection * this.baseSpeed + this.changeDirection * Math.floor(Math.random() * this.speedFluctuation - this.maxSpeedFluctuation / 2);
-		
+		this.speed.y = -this.speed.y;
 	}
 
-	update(deltaTime, game) {
+	update(deltaTime) {
 		// Add distance traveled
 		this.position.x += this.speed.x * (deltaTime / 1000);
 		this.position.y += this.speed.y * (deltaTime / 1000);
@@ -77,9 +69,7 @@ export default class Ball {
 			this.speed.y = -this.speed.y;
 		} else if (this.position.y > this.game.gameHeight - this.size) {
 			// THIS IS GAME OVER
-			this.game.death();
-			this.position.y = this.game.gameHeight - this.size;
-			this.speed.y = -this.speed.y;
+			this.ballDelete = true;
 		}
 	}
 
@@ -92,11 +82,12 @@ export default class Ball {
 					object.delete = true;
 					this.speed.y = - this.speed.y;
 				}
+			}
+
 			// Branch where object is a paddle
-			} else if (object.maxSpeed !== undefined) {
+			if (object.maxSpeed !== undefined) {
 				if (checkCollision(this, object)) {
 					this.position.y = object.position.y - this.size;
-					this.speed.y = -this.speed.y;
 					this.newSpeed();
 				}
 			}

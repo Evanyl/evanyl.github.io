@@ -13,20 +13,20 @@ export default class InputHandler {
 			switch(event.keyCode) {
 				case 37:
 					if (game.gameState === GAMESTATE.RUNNING) {
-						game.ball.starting();
+						game.starting();
 						game.paddle.moveLeft();
 					}
 					break;
 				case 39:
 					if (game.gameState === GAMESTATE.RUNNING) {
-						game.ball.starting();
+						game.starting();
 						game.paddle.moveRight();
 					}
 					break;
 
 				case 32:
 					if (game.gameState === GAMESTATE.MENU) {
-						game.start();
+						game.reset();
 					}
 					break;
 
@@ -54,15 +54,19 @@ export default class InputHandler {
 
 		htmlObject.addEventListener('touchstart', (e) => {
 			if (game.gameState === GAMESTATE.MENU) {
-				game.start();
+				game.reset();
 				game.gameState = GAMESTATE.RUNNING;
 			}
 			if(e.touches[e.touches.length -1].clientX < 400) {
-				game.ball.starting();
-				game.paddle.moveLeft();
+				if (game.gameState === GAMESTATE.RUNNING) {
+					game.starting();
+					game.paddle.moveLeft();
+				}
 			} else if (e.touches[e.touches.length -1].clientX > 600) {
-				game.ball.starting();
-				game.paddle.moveRight();
+				if (game.gameState === GAMESTATE.RUNNING) {
+					game.starting();
+					game.paddle.moveRight();
+				}
 			}
 		});
 
