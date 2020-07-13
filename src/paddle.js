@@ -1,5 +1,7 @@
 export default class Paddle {
 	constructor(game) {
+		this.image = new Image();
+		this.image.src = `../assets/images/paddle.png`;
 		this.width = 140;
 		this.height = 15;
 
@@ -12,8 +14,9 @@ export default class Paddle {
 	}
 
 	draw(ctx) {
-		ctx.fillStyle = "#043d80";
-		ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+		//ctx.fillStyle = "#043d80";
+		//ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+		ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
 	}
 
 	update(deltaTime) {
