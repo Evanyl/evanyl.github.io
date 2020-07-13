@@ -88,7 +88,7 @@ export default class Game {
 		if (this.countBalls() < this.multiplier && (this.countBalls() + this.deadBalls) !== this.multiplier) {
 			this.ball2 = new Ball(this);
 			this.ball2.position = {x: 500, y: 300};
-			this.ball2.speed = {x: 400, y: -400};
+			this.ball2.speed = {x: 200, y: -300};
 			this.gameObjects.push(this.ball2);
 		}
 
