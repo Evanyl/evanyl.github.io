@@ -1,66 +1,36 @@
 <!DOCTYPE html>
-<html id="htmlObject">
-  <head>
-    <meta name="viewport" charset="utf-8" content= "width=1000, user-scalable=no">
-    <title>Lift Off</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hub</title>
+  <style>
+    html {
+      font-size: 16px;
+    }
 
-    <style>
-      #gameScreen {
-        border: 1px solid black;
-      }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+    }
 
-      img {
-        display: none;
-      }
+    #navigation {
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
 
-      body {
-        text-align: center;
-        font-family: monospace;
-        font-size: 25px;
-        margin: auto;
-        width: 800px;
-
-        -webkit-user-select: none;
-    	-moz-user-select: -moz-none;
-    	-ms-user-select: none;
-        user-select: none;
-      }
-
-      h1 {
-      	margin: 0;
-      }
-
-      h2 {
-      	margin: 0;
-      }
-
-      #gameInfo{
-      	margin: 0;
-      	padding: 0;
-      	text-align: left;
-      }
-
-      #gameInfo p {
-      	display: inline;
-      }
-
-      #multiplier {
-      	float: right;
-      }
-    </style>
-  </head>
-
-  <body>
-    <h1>WATCH THE THRONE</h1>
-    <div id="gameInfo">
-      <p>Score: </p> 
-      <p id="score">0</p>
-      <span id="multiplier">Multiplier: 1x</span>
-      <br>
-     </div>
-    <canvas id="gameScreen" width="800" height="600"></canvas>
-    <h2>CREDITS:</h2>
-    <p id="ilya">Ilya Veksler - Art</p>
-    <script src="src/index.js" type="module"></script>
-  </body>
+    a {
+      margin: 0 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="navigation">
+    <a href="brick/index.html">Brick Breaker</a><br>
+    <a href="kanye/index.html">Mystery</a>
+  </div>
+</body>
 </html>
