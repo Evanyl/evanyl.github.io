@@ -14,6 +14,14 @@ body, html {
   user-select: none;
 }
 
+kbd {
+  font-family: monospace;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 #menu {
 	display: flex;
 	flex: 1;
