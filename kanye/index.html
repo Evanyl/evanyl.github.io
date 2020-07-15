@@ -15,18 +15,33 @@
 	<audio data-key="32" src="assets/laMonster.mp3"></audio>
 
 	<script>
+		let scaleFactor = 1.1;
+		let increment = 0.02;
 
 		const element = document.getElementById('play');
 		element.addEventListener('touchstart', (e) => {
 			let audio = document.querySelector(`audio[data-key="32"]`);
+			let key = document.querySelector(`.key[data-key="32"]`);
 			audio.play();
+			key.classList.add('playing');
+
+			scaleFactor += increment;
+			key.style.transform = `scale(${scaleFactor})`;
+
 		});
 
 		window.addEventListener('keydown', (e) => {
 			let audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+			let key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 			if (!audio) return;
 			audio.play();
+			key.classList.add('playing');
+
+			scaleFactor += increment;
+			key.style.transform = `scale(${scaleFactor})`;
+
 		});
+
 	</script>
 </body>
 
