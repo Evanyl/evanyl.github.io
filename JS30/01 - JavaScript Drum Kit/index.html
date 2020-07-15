@@ -60,9 +60,15 @@
 <script>
 	window.addEventListener('keydown', function(e) {
 		const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 		if (!audio) return; // Stop the function if not a proper key
+    audio.currentTime = 0; // Rewind to zero
 		audio.play();
+    key.classList.add('playing');
+
 	});
+
+  const keys = document.querySelectorAll('.key');
 </script>
 
 
