@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" charset="utf-8" content= "width=1000, user-scalable=no">
+	<title>Estimate Pi</title>
+	<style>
+		body, html {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body {
+			font-size: 16px;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Estimation of Pi</h1>
+	<form id="numPoints" onsubmit='testPi();return false'>
+		<input
+			id="numPointsValue"
+			type="number"
+			placeholder="Type a number of points to test..."
+			required
+			autocomplete="off" 
+		/>
+		<button class="button">Test</button>
+	</form>
+
+	<p>Estimation of Pi: <span id="piNum"></span></p>
+
+	<script>
+		let numPointsElement = document.getElementById('numPointsValue');
+		let piDisplay = document.getElementById('piNum');
+
+		let testPi = () => {
+			let pointsToTest = numPointsElement.value;
+			let pointsCircle = 0;
+			let pointsTotal = 0;
+
+			let x;
+			let y;
+
+			for (let i = 1; i <= pointsToTest; i++) {
+				x = Math.random();
+				y = Math.random();
+
+				distance = Math.pow(x, 2) + Math.pow(y, 2);
+				if (distance <= 1) pointsCircle++;
+				pointsTotal++;
+			}
+
+			let pi = 4 * pointsCircle / pointsTotal;
+
+			piDisplay.innerHTML = pi;
+		}
+	</script>
+</body>
+
+</html>
