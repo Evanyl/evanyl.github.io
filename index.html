@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Hub</title>
-  <style>
-    html {
-      font-size: 16px;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <title>Evan Liu</title>
+  </head>
+  <body>
+    <div id="front-banner">
+      <h1>Evan Liu</h1>
+      <p id="desc">A work in progress</p>
+    </div>
 
-    html, body {
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-      font-family: monospace;
-      background: skyblue;
-      color: #fff;
-      background-position: center;
-      font-size: 1.5rem;
-    }
+    <h2 class="heading">Projects</h2>
 
-    #navigation {
-      display: flex;
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-    }
+    <div id="projects">
 
-    a {
-      margin: 1rem;
-      padding: 0.5rem 1rem;
-      color: #fff;
-      text-decoration: none;
-      border: 1px solid black;
-    }
-  </style>
-</head>
-<body>
-  <h1>Evan Liu - Work in Progress</h1>
-  <div id="navigation">
-    <a href="brick/index.html">Brick Breaker</a>
-    <a href="https://evanyl.herokuapp.com/">Chat</a>
-    <a href="estimate_pi/index.html">Pi Estimation</a>
-  </div>
-</body>
+      <a href="brick/index.html" target="_blank">
+        <div class="project">
+          <h3>Brick Breaker</h3>
+          <p class="collapse">A very simple brick breaker webgame, created to learn the basics of Javascript.</p>
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+          </ul>
+          <p class="expand"><i class="	fa fa-angle-double-right"></i></p>
+        </div>
+      </a>
+
+      <a href="https://evanyl.herokuapp.com/" target="_blank">
+        <div class="project">
+          <h3>Chatsite</h3>
+          <p class="collapse">A chatsite with rooms, created to explore Node and Express.</p>
+          <ul class="tags">
+            <li>Node</li>
+            <li>Express</li>
+            <li>Javascript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+          <p class="expand"><i class="	fa fa-angle-double-right"></i></p>
+        </div>
+      </a>
+
+    </div>
+
+    <div id="contact">
+      <p>liuyievan@gmail.com</p>
+    </div>
+    <script type="text/javascript" src="/assets/index.js"></script>
+  </body>
 </html>
