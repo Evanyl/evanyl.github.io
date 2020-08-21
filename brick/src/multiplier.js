@@ -9,6 +9,6 @@ export default class MultiplierHandler {
 	}
 
 	update(deltaTime) {
-		this.multiplierElement.innerHTML = `Multiplier: ${this.game.multiplier}x`;
+		this.multiplierElement.innerHTML = `Multiplier: ${this.game.multiplierDisplay}x`;
 	}
 }

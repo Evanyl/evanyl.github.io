@@ -84,6 +84,7 @@ export default class Game {
 
 	multiBallCheck(bricksDestroyed) {
 		this.totalBricksDestroyed += bricksDestroyed;
+		this.multiplierDisplay = this.countBalls();
 		this.multiplier = Math.floor(this.totalBricksDestroyed / 15 + 1);
 		if (this.countBalls() < this.multiplier && (this.countBalls() + this.deadBalls) !== this.multiplier) {
 			this.ball2 = new Ball(this);
@@ -100,7 +101,7 @@ export default class Game {
 		this.bricks = this.levelHandler.buildLevel(this.levels[this.level]);
 		this.gameObjects = [...this.essentialObjects, ...this.bricks];
 		this.notStarted = true;
-		this.levels.push(this.levelHandler.randomLevelGenerator());
+		this.levels.push(this.levelHandler.randomLevelGenerator(this.level));
 	}
 
 	// Draw screen

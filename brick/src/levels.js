@@ -23,14 +23,15 @@ export default class LevelHandler {
 		return bricks;
 	}
 	
-	randomLevelGenerator() {
+	randomLevelGenerator(level) {
 		let bricks = [];
+		let levelKey = 0.1 + level / 50;
 		for (let rowIndex = 0; rowIndex < 20; rowIndex++) {
 			let row = [];
 			for (let columnIndex = 0; columnIndex < 10; columnIndex++) {
 				if (rowIndex >= 17) {
 					row.push(0);
-				} else if (Math.random() < 0.5) {
+				} else if (Math.random() < levelKey) {
 					row.push(1);
 				} else {
 					row.push(0);
