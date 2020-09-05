@@ -25,11 +25,14 @@ body {
     justify-content: center;
     background-color: skyblue;
     width: 100%;
-    min-height: 40vh;
+    min-height: 100vh;
     margin: 0;
     padding: 10px 0;
     color: #fff;
     text-align: center;
+    background: url('landing.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -54,8 +57,8 @@ h1 {
 .heading {
     text-align: center;
     margin: 0;
-    padding: 15vh 0 3vh 0;
-    font-size: 3rem;
+    padding: 8vh 0 3vh 0;
+    font-size: 2rem;
 }
 
 #projects {
@@ -151,4 +154,5 @@ h1 {
     color: #fff;
     text-align: center;
     letter-spacing: 0.1rem;
+    font-size: 1.3rem;
 }
