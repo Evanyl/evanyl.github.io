@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Evan Liu</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="../index.html" class="logo">Welcome!</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../software.html">Software Experience</a></li>
+        <li class="active"><a href="../electrical.html">Electrical Experience</a></li>
+        <li><a href="../mechanical.html">Mechanical Experience</a></li>
+      </ul>
+      <ul class="icons">
+        <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Posts -->
+      <section class="post">
+        <header>
+          <span class="date">Nov 2020 - Dec 2020</span>
+          <h2><a href="#">Analog-to-Digital Convertor</a></h2>
+        </header>
+        <p><span class="image left"><img src="../images/adc.jpg" alt="" /></span> This class project was to convert an
+          analog signal to a digital one.
+          This was done by connecting 5 components:</p>
+        <div class="row">
+          <ul>
+            <li>Trigger Pulse Generator</li>
+            <li>Clock Pulse Generator</li>
+            <li>Counter</li>
+            <li>Analog to Time Convertor</li>
+            <li>Control Logic</li>
+          </ul>
+        </div>
+        <h3>Components</h3>
+        <dl>
+          <dt>Trigger Pulse Generator</dt>
+          <dd>
+            <p>The trigger pulse generator is responsible for generating periodic pulses, which mark the beginning of
+              data collection.
+              Ideally this runs in a loop, taking data continuously.
+            </p>
+          </dd>
+          <dt>Clock Pulse Generator</dt>
+          <dd>
+            <p>The clock pulse generator produces a continuous square wave with constant period, which allows us to keep
+              track of its pulses.</p>
+          </dd>
+          <dt>Counter</dt>
+          <dd>
+            <p>When given the start signal from the trigger pulse generator, starts counting pulses from the clock pulse
+              generator until
+              given a stop pulse from the analog to time convertor.
+            </p>
+          </dd>
+          <dt>Analog to Time Convertor</dt>
+          <dd>
+            <p>This component will generate a time window linearly dependent on the input voltage we would like to
+              convert, and produce a
+              pulse to mark the end of data collection. Since the time is linearly dependent on the voltage, we can map
+              a relation between
+              how many square waves are counter by the counter, to an analog voltage.
+            </p>
+          </dd>
+          <dt>Control Logic</dt>
+          <dd>
+            <p>Organizes each component to work with each other.</p>
+          </dd>
+        </dl>
+        <ul class="actions">
+          <li><a href="./Lab6Final.pdf" download="Lab6Final.pdf" class="button primary">Full Lab Report</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <section>
+        <ul class="actions special">
+          <li><a href="./assets/Resume Dec 2020.pdf" class="button" download="Resume Dec 2020.pdf">Resume</a></li>
+        </ul>
+      </section>
+      <section class="center-footer">
+        <section>
+          <ul class="icons alt">
+            <li><a href="mailto: liuyievan@gmail.com" class="fas fa-inbox" id="newicon" target="_blank"></a></li>
+            <li><a href="https://www.linkedin.com/in/evan-liu-9165a6194/" class="icon brands alt fa-linkedin"
+                target="_blank"><span class="label">Linkedin</span></a></li>
+            <li><a href="https://github.com/evanyl" class="icon brands alt fa-github" target="_blank"><span
+                  class="label">GitHub</span></a></li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Evan Liu</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
